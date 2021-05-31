@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\MatchController;
-use \App\Http\Controllers\HasMatch;
+use \App\Http\Controllers\HasMatchController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,7 +18,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::post('/createFixture',[HasMatch::class,'createFixture'])->name("createFixture");
+Route::post('/createFixture',[HasMatchController::class,'createFixture'])->name("createFixture");
 Route::get('/',[MatchController::class,'index'])->name("home");
 Route::post('/playMatch',[MatchController::class,'playMatch'])->name('playMatch');
 Route::post('/getPointsTable',[MatchController::class,'getPointsTable'])->name('getPointsTable');
